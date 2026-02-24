@@ -8,9 +8,9 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --navy: #1a2e44;
-    --teal: #2a7f7f;
-    --teal-light: #3a9f9f;
-    --cream: #faf8f5;
+    --teal: #9a7a2e;
+    --teal-light: #e2c97e;
+    --cream: #faf6ef;
     --white: #ffffff;
     --gray: #6b7280;
     --text: #1f2937;
@@ -39,7 +39,7 @@
   }
   #hero::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(42,127,127,0.15) 0%, transparent 60%);
+    background: none;
   }
   .hero-content { position: relative; z-index: 1; max-width: 800px; }
   .hero-photo {
@@ -47,7 +47,7 @@
     border: 3px solid var(--teal-light);
     object-fit: cover; object-position: center top;
     margin: 0 auto 1.5rem; display: block;
-    box-shadow: 0 0 0 6px rgba(42,127,127,0.15);
+    box-shadow: 0 0 0 6px rgba(201,168,76,0.15);
   }
   .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); color: #ffffff; line-height: 1.2; margin-bottom: 1rem; font-weight: normal; }
   .hero-sub { font-family: 'Arial', sans-serif; color: rgba(255,255,255,0.65); font-size: 0.9rem; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
@@ -56,7 +56,7 @@
   .hero-icon-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; cursor: pointer; transition: transform 0.2s ease; }
   .hero-icon-item:hover { transform: scale(1.2); }
   .hero-icon-item svg { width: 1.5rem; height: 1.5rem; stroke: #e2c97e; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .hero-icon-item span { font-family: 'Arial', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .hero-icon-item span { font-family: 'Arial', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #e2c97e; }
   .hero-cta {
     display: inline-block; border: 1px solid var(--teal-light); color: var(--teal-light);
     padding: 0.75rem 2rem; text-decoration: none; font-family: 'Arial', sans-serif;
@@ -85,7 +85,7 @@
   }
   .portfolio-section-title::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
   .project-card { border: 1px solid #e5e7eb; padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
-  .project-card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(42,127,127,0.08); }
+  .project-card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(201,168,76,0.08); }
   .project-card h3 { color: var(--navy); font-size: 1.1rem; margin-bottom: 0.4rem; }
   .project-tags { font-family: 'Arial', sans-serif; font-size: 0.72rem; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
   .project-card p { color: var(--gray); font-size: 0.95rem; margin-bottom: 0.75rem; }
@@ -110,9 +110,9 @@
   #skills .divider { background: var(--teal-light); }
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
   .skill-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .skill-icon { width: 2rem; height: 2rem; background: rgba(42,127,127,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 0.25rem; }
-  .skill-icon svg { width: 1rem; height: 1rem; stroke: var(--teal-light); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .skill-group h4 { font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.25rem; }
+  .skill-icon { width: 2rem; height: 2rem; background: rgba(201,168,76,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 0.25rem; }
+  .skill-icon svg { width: 1rem; height: 1rem; stroke: #e2c97e; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .skill-group h4 { font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e2c97e; margin-bottom: 0.25rem; }
   .skill-group p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.8; font-family: 'Arial', sans-serif; }
 
   /* CONTACT */
@@ -156,7 +156,7 @@
     <img src="photo.JPG" alt="Aastha Dave" class="hero-photo">
     <h1 class="hero-title">Aastha Dave</h1>
     <p class="hero-sub">Pharm.D. &nbsp;|&nbsp; MS Regulatory Affairs Candidate</p>
-    <p class="hero-tagline"> Committed to doing work that makes a difference.</p>
+    <p class="hero-tagline">Committed to doing work that makes a difference.</p>
     <div class="hero-icons">
       <div class="hero-icon-item">
         <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -343,7 +343,7 @@
     <div class="section-label">Contact</div>
     <h2 class="section-title">Let's Connect</h2>
     <div class="divider" style="margin: 0 auto 1.5rem;"></div>
-    <p>Open to full-time opportunities in regulatory affairs, medical affairs, and market access.</p>
+    <p>Open to opportunities.</p>
     <div class="contact-links">
       <a href="https://linkedin.com/in/aastha-dave-85547823a" target="_blank" class="contact-link primary">LinkedIn</a>
       <a href="mailto:dave.aas@northeastern.edu" class="contact-link secondary">Email Me</a>
@@ -357,3 +357,4 @@
 
 </body>
 </html>
+
