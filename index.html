@@ -37,10 +37,7 @@
     text-align: center; padding: 6rem 2rem 4rem;
     position: relative; overflow: hidden;
   }
-  #hero::before {
-    content: ''; position: absolute; inset: 0;
-    background: none;
-  }
+  #hero::before { content: ''; position: absolute; inset: 0; background: none; }
   .hero-content { position: relative; z-index: 1; max-width: 800px; }
   .hero-photo {
     width: 140px; height: 140px; border-radius: 50%;
@@ -102,6 +99,7 @@
   .on-request { font-family: 'Arial', sans-serif; font-size: 0.8rem; color: var(--gray); font-style: italic; margin-top: 0.75rem; }
   .in-progress { display: inline-block; background: #fef3c7; color: #92400e; font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; margin-bottom: 0.75rem; }
   .no-share { font-family: 'Arial', sans-serif; font-size: 0.8rem; color: var(--gray); font-style: italic; margin-top: 0.5rem; }
+  .group-label { font-family: 'Arial', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); margin: 2rem 0 1rem; font-weight: bold; }
 
   /* SKILLS */
   #skills { background: var(--navy); }
@@ -158,15 +156,15 @@
     <p class="hero-sub">Pharm.D. &nbsp;|&nbsp; MS Regulatory Affairs Candidate</p>
     <p class="hero-tagline">Committed to doing work that makes a difference.</p>
     <div class="hero-icons">
-      <div class="hero-icon-item">
-        <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-        <span>Regulatory</span>
-      </div>
-      <div class="hero-icon-item">
+      <div class="hero-icon-item" onclick="document.getElementById('med-affairs').scrollIntoView({behavior:'smooth'})">
         <svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
         <span>Medical Affairs</span>
       </div>
-      <div class="hero-icon-item">
+      <div class="hero-icon-item" onclick="document.getElementById('reg-legal').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span>Regulatory</span>
+      </div>
+      <div class="hero-icon-item" onclick="document.getElementById('market-access').scrollIntoView({behavior:'smooth'})">
         <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
         <span>Market Access</span>
       </div>
@@ -200,7 +198,7 @@
     <div class="divider"></div>
 
     <!-- 01 Medical Affairs -->
-    <div class="portfolio-section">
+    <div class="portfolio-section" id="med-affairs">
       <div class="portfolio-section-title">01 — Medical Affairs</div>
 
       <div class="project-card">
@@ -216,10 +214,11 @@
         <p>Embedded within the Medical Information and Medical Communications team at Insulet Corporation. Day-to-day responsibilities included:</p>
         <ul>
           <li>Authoring and contributing to 20+ FDA SIUU-compliant Scientific Response Letters (SRLs) and custom response documents</li>
-          <li>Conducted ongoing competitive intelligence across scientific databases and industry sources to maintain an internal evidence tracker — enabling the Medical Affairs team to benchmark Omnipod® 5 clinical data and study methodologies against key competitors</li>
-          <li>Supporting scientific congress execution across major international and regional meetings</li>
-          <li>Assisting with MLR reviews and coordinating review timelines</li>
+          <li>Maintaining and updating Standard Response Letters (SRLs) across global markets</li>
+          <li>Supporting scientific congress execution across 3 major international and multiple regional meetings</li>
+          <li>Managing MLR reviews via Veeva, coordinating cross-functional review timelines</li>
           <li>Responding to internal evidence requests from cross-functional teams</li>
+          <li>Built and maintained a competitive intelligence tracker spanning clinical data and study methodologies across competitor products — giving the Medical Affairs team a live reference point for scientific positioning and response strategy</li>
         </ul>
         <p class="no-share">Proprietary materials not shared.</p>
       </div>
@@ -227,7 +226,7 @@
       <div class="project-card">
         <h3>Co-op Project — Global Off-Label Inquiry Regulatory Matrix</h3>
         <div class="project-tags">Regulatory Intelligence | Global | Cross-functional</div>
-        <p>Mapped off-label inquiry response regulations across U.S., Canada, Australia, EU, APEC, GCC, and LATAM into a single reference matrix. Presented findings to stakeholders across Regulatory Affairs, Medical Affairs, Market Access, and Compliance — a cross-functional discussion that led to the formalization of a global SOP and updates to internal SRL templates to reflect current guidance.</p>
+        <p>Mapped off-label inquiry response regulations across U.S., Canada, Australia, EU, APAC, GCC, and LATAM into a single reference matrix. Presented findings to stakeholders across Regulatory Affairs, Medical Affairs, Market Access, and Compliance — a cross-functional discussion that led to the formalization of a global SOP and updates to internal SRL templates to reflect current guidance.</p>
         <p class="no-share">Proprietary materials not shared.</p>
       </div>
 
@@ -240,41 +239,82 @@
     </div>
 
     <!-- 02 Regulatory & Legal -->
-    <div class="portfolio-section">
+    <div class="portfolio-section" id="reg-legal">
       <div class="portfolio-section-title">02 — Regulatory &amp; Legal Writing</div>
 
+      <div class="group-label">Submissions &amp; Strategy</div>
+
       <div class="project-card">
-        <h3>StrokeMate™ — Full Regulatory &amp; Quality Systems Package</h3>
-        <div class="project-tags">Medical Device | AI/SaMD | Class II | 510(k) | Graduate Coursework</div>
-        <p>StrokeMate is a fictitious AI-enabled CT imaging system for acute neurovascular event detection, developed as a consistent case study across multiple graduate courses. Taken together, the documents below demonstrate end-to-end regulatory and quality systems thinking for a SaMD device navigating current FDA Digital Health expectations.</p>
-        <h4>Pre-Submission (Q-Sub) Package</h4>
-        <p>A formal FDA Q-Sub request seeking written feedback prior to 510(k) submission. Covers predicate strategy and substantial equivalence framing for a device with integrated AI severity scoring; retrospective dataset validation and ground truth adjudication methodology; AI performance drift and locked algorithm controls; and cybersecurity risk modeling for adversarial inputs and DICOM integrity threats.</p>
+        <h3>510(k) Premarket Notification: Substantial Equivalence Submission</h3>
+        <div class="project-tags">510(k) | Medical Device | Predicate Strategy | Graduate Coursework</div>
+        <p>A complete 510(k) Summary for the VascuCage™ Inferior Vena Cava Filter, submitted in accordance with 21 CFR 807.92. Establishes substantial equivalence to the Crux® Vena Cava Filter (K150262) through a structured comparison of intended use, technological characteristics, and design differences. Demonstrates working knowledge of 510(k) format requirements, predicate identification, and substantial equivalence argumentation.</p>
+        <a href="vascucage-510k.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>PMA Regulatory Strategy &amp; Global Classification Plan</h3>
+        <div class="project-tags">PMA | Global Classification | FDA / EU MDR / Health Canada | Graduate Coursework</div>
+        <p>A regulatory strategy document for the VascuCage™ IVC Filter, determining the appropriate U.S. PMA pathway based on device classification, risk profile, and known limitations of the 510(k) pathway for this device type. Includes proposed indications for use, marketing claims, competitive device landscape, and parallel classification analysis across the U.S. (Class III), EU (Class III under EU MDR), and Canada (Class IV under CMDR).</p>
+        <a href="vascucage-pma-strategy.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Pre-Submission (Q-Sub) Package — StrokeMate™ AI-Enabled CT Imaging System</h3>
+        <div class="project-tags">Q-Sub | AI/SaMD | 510(k) | Cybersecurity | Graduate Coursework</div>
+        <p>A formal FDA Pre-Submission request for StrokeMate™, an AI-enabled CT imaging system for acute neurovascular event detection. Seeks FDA feedback on four substantive areas prior to 510(k) submission: predicate strategy and substantial equivalence framing for a device with integrated AI severity scoring; retrospective dataset validation and ground truth adjudication methodology; AI performance drift and locked algorithm controls; and cybersecurity risk modeling for adversarial inputs and DICOM integrity threats.</p>
         <a href="strokemate-qsub.pdf" target="_blank" class="download-btn">View PDF</a>
-        <h4>Design Control &amp; Development Plan</h4>
-        <p>A 21 CFR 820.30-aligned plan covering the full device lifecycle from user needs through design transfer. Includes cross-functional RACI mapping, design input/output documentation, verification and validation strategy, and DHF structure.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Multi-Jurisdictional PMA Strategy: U.S., Canada &amp; Mexico</h3>
+        <div class="project-tags">PMA | Global Strategy | Combination Product | IDE | Graduate Coursework</div>
+        <p>A comprehensive global regulatory strategy for the nuBeam BNCT System — an accelerator-based combination product for Boron Neutron Capture Therapy. Anchored in a U.S. modular PMA with parallel Class IV MDL submission to Health Canada and Class III Registro Sanitario to COFEPRIS. Covers harmonized testing frameworks, IDE clinical strategy, MAH responsibilities across all three jurisdictions, labeling and UDI requirements, and post-market surveillance obligations.</p>
+        <a href="nubeam-global-strategy.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="group-label">Quality Systems &amp; Device Development</div>
+
+      <div class="project-card">
+        <h3>Design Control &amp; Development Plan — StrokeMate™</h3>
+        <div class="project-tags">21 CFR 820.30 | Design Controls | DHF | Graduate Coursework</div>
+        <p>A 21 CFR 820.30-aligned design and development plan covering the full device lifecycle from user needs through design transfer. Includes cross-functional RACI mapping, design input/output documentation, verification and validation strategy, risk management integration per ISO 14971, and Design History File (DHF) structure.</p>
         <a href="strokemate-design-control.pdf" target="_blank" class="download-btn">View PDF</a>
-        <h4>QMS SOP Suite — Document Control | CAPA | Complaint Handling &amp; MDR</h4>
-        <p>Three production-format SOPs aligned with 21 CFR Part 820 and ISO 13485:2016, each with purpose, scope, definitions, responsibility/authority matrix, step-by-step procedures, and revision history. The CAPA and Complaint Handling SOPs specifically address AI output anomalies, cybersecurity events, and MDR reportability determinations.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>QMS SOP Suite — Document Control | CAPA | Complaint Handling &amp; MDR</h3>
+        <div class="project-tags">21 CFR 820 | ISO 13485 | CAPA | MDR | Graduate Coursework</div>
+        <p>Three production-format SOPs for RadHealth, Inc., aligned with 21 CFR Part 820 and ISO 13485:2016. Each SOP includes purpose, scope, definitions, responsibility/authority matrix, step-by-step procedures, and revision history. The CAPA and Complaint Handling SOPs specifically address AI output anomalies, cybersecurity events, and MDR reportability determinations.</p>
         <a href="strokemate-sop-suite.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>BioDevek — 21 CFR 820 / ISO 13485 Gap Analysis &amp; ISO 14971 Risk Management Plan</h3>
+        <div class="project-tags">Academic-Industry Collaboration | Gap Analysis | Risk Management</div>
+        <p>Gap analysis and ISO 14971-aligned risk management plan for an early-stage medical device startup, supporting regulatory compliance positioning and post-market surveillance readiness.</p>
+        <p class="on-request">Available upon request.</p>
+      </div>
+
+      <div class="group-label">Safety &amp; Legal</div>
+
+      <div class="project-card">
+        <h3>Post-Market Benefit-Risk Analysis: SUSVIMO® Combination Product Recall</h3>
+        <div class="project-tags">Benefit-Risk | Post-Market Surveillance | Combination Product | REMS | Graduate Coursework</div>
+        <p>A comprehensive analysis of SUSVIMO®'s regulatory journey from BLA approval to voluntary recall — examining how FDA's Benefit-Risk Framework applies to combination products, where pre-market safety assessments fell short, and what the case reveals about post-market surveillance gaps for biologic-device products. Covers FAERS signal detection, REMS considerations, the role of human factors, and strategic recommendations for combination product oversight.</p>
+        <a href="susvimo-benefit-risk.pdf" target="_blank" class="download-btn">View PDF</a>
       </div>
 
       <div class="project-card">
         <h3>Harmonising Innovation: Reconciling the EU AI Act and MDR</h3>
         <div class="project-tags">Legal & Policy Analysis | EU Digital Health | International RA | Graduate Coursework</div>
-        <p>Most regulatory writing is about applying frameworks. This paper is about interrogating them. Written for RGA6204 — Legal Issues in International Food, Drug and Medical Device Regulation, it examines what happens when two equally binding EU Regulations — the MDR and the AI Act — overlap without a clear hierarchy, and what that means for manufacturers of AI-enabled medical devices. The paper argues through three CJEU cases that definitional ambiguity, inconsistent Notified Body enforcement, and disproportionate compliance burdens risk stifling the very innovation both Regulations are designed to enable.</p>
+        <p>Most regulatory writing is about applying frameworks. This paper is about interrogating them. Examines what happens when two equally binding EU Regulations — the MDR and the AI Act — overlap without a clear hierarchy, and what that means for manufacturers of AI-enabled medical devices. Argues through three CJEU cases that definitional ambiguity, inconsistent Notified Body enforcement, and disproportionate compliance burdens risk stifling the very innovation both Regulations are designed to enable.</p>
         <a href="eu-ai-act-paper.pdf" target="_blank" class="download-btn">View PDF</a>
       </div>
 
-      <div class="project-card">
-        <h3>BioDevek — Gap Analysis &amp; Risk Management Plan</h3>
-        <div class="project-tags">Academic-Industry Collaboration | 21 CFR 820 | ISO 13485 | ISO 14971</div>
-        <p>Gap analysis and ISO 14971-aligned risk management plan for an early-stage medical device startup, supporting regulatory compliance positioning and post-market surveillance readiness.</p>
-        <p class="on-request">Available upon request.</p>
-      </div>
     </div>
 
     <!-- 03 Market Access -->
-    <div class="portfolio-section">
+    <div class="portfolio-section" id="market-access">
       <div class="portfolio-section-title">03 — Market Access</div>
 
       <div class="project-card">
@@ -306,7 +346,7 @@
       <div class="skill-group">
         <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
         <h4>Regulatory</h4>
-        <p>510(k) · PMA · Q-Sub · SaMD · Global Classification · FDA · EU MDR · Health Canada</p>
+        <p>510(k) · PMA · Q-Sub · SaMD · Global Classification · FDA · EU MDR · Health Canada · COFEPRIS</p>
       </div>
       <div class="skill-group">
         <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
@@ -322,6 +362,11 @@
         <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
         <h4>Market Access</h4>
         <p>Payer Evidence Mapping · CMS/Medicaid · Value Narrative Development · HEOR</p>
+      </div>
+      <div class="skill-group">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+        <h4>Safety Sciences</h4>
+        <p>SUSAR Reporting · Pharmacovigilance · Benefit-Risk Assessment · REMS · FAERS · ICH E2A</p>
       </div>
       <div class="skill-group">
         <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
@@ -343,7 +388,7 @@
     <div class="section-label">Contact</div>
     <h2 class="section-title">Let's Connect</h2>
     <div class="divider" style="margin: 0 auto 1.5rem;"></div>
-    <p>Open to opportunities.</p>
+    <p>Open to full-time opportunities in regulatory affairs, medical affairs, and market access.</p>
     <div class="contact-links">
       <a href="https://linkedin.com/in/aastha-dave-85547823a" target="_blank" class="contact-link primary">LinkedIn</a>
       <a href="mailto:dave.aas@northeastern.edu" class="contact-link secondary">Email Me</a>
