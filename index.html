@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aastha Dave — Regulatory Affairs & Market Access</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --navy: #1a2e44;
+    --teal: #9a7a2e;
+    --teal-light: #e2c97e;
+    --cream: #faf6ef;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --text: #1f2937;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Georgia', serif; color: var(--text); background: var(--white); line-height: 1.7; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-name { font-size: 1rem; font-weight: bold; color: var(--navy); letter-spacing: 0.05em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--gray); font-family: 'Arial', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 6rem 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  #hero::before { content: ''; position: absolute; inset: 0; background: none; }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; }
+  .hero-photo {
+    width: 140px; height: 140px; border-radius: 50%;
+    border: 3px solid var(--teal-light);
+    object-fit: cover; object-position: center top;
+    margin: 0 auto 1.5rem; display: block;
+    box-shadow: 0 0 0 6px rgba(201,168,76,0.15);
+  }
+  .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); color: #ffffff; line-height: 1.2; margin-bottom: 1rem; font-weight: normal; }
+  .hero-sub { font-family: 'Arial', sans-serif; color: rgba(255,255,255,0.65); font-size: 0.9rem; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+  .hero-tagline { color: rgba(255,255,255,0.85); font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .hero-icons { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; }
+  .hero-icon-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; cursor: pointer; transition: transform 0.2s ease; }
+  .hero-icon-item:hover { transform: scale(1.2); }
+  .hero-icon-item svg { width: 1.5rem; height: 1.5rem; stroke: #e2c97e; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .hero-icon-item span { font-family: 'Arial', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #e2c97e; }
+  .hero-cta {
+    display: inline-block; border: 1px solid var(--teal-light); color: var(--teal-light);
+    padding: 0.75rem 2rem; text-decoration: none; font-family: 'Arial', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s;
+  }
+  .hero-cta:hover { background: var(--teal-light); color: var(--navy); }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 860px; margin: 0 auto; }
+  .section-label { font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+  .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); margin-bottom: 2rem; font-weight: normal; }
+  .divider { width: 3rem; height: 2px; background: var(--teal); margin-bottom: 2.5rem; }
+
+  /* ABOUT */
+  #about { background: var(--cream); }
+  .about-text p { margin-bottom: 1.25rem; color: var(--text); font-size: 1.05rem; }
+  .about-closer { font-size: 1.1rem; font-style: italic; color: var(--navy); margin-top: 1.5rem; border-left: 3px solid var(--teal); padding-left: 1.25rem; }
+
+  /* PORTFOLIO */
+  #portfolio { background: var(--white); }
+  .portfolio-section { margin-bottom: 4rem; }
+  .portfolio-section-title {
+    font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;
+  }
+  .portfolio-section-title::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
+  .project-card { border: 1px solid #e5e7eb; padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
+  .project-card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(201,168,76,0.08); }
+  .project-card h3 { color: var(--navy); font-size: 1.1rem; margin-bottom: 0.4rem; }
+  .project-tags { font-family: 'Arial', sans-serif; font-size: 0.72rem; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
+  .project-card p { color: var(--gray); font-size: 0.95rem; margin-bottom: 0.75rem; }
+  .project-card ul { padding-left: 1.25rem; color: var(--gray); font-size: 0.95rem; }
+  .project-card ul li { margin-bottom: 0.4rem; }
+  .project-card h4 { color: var(--navy); font-size: 0.95rem; margin: 1.25rem 0 0.5rem; font-style: italic; }
+  .download-btn {
+    display: inline-block; margin-top: 1rem; margin-right: 0.75rem;
+    padding: 0.5rem 1.25rem; border: 1px solid var(--teal); color: var(--teal);
+    text-decoration: none; font-family: 'Arial', sans-serif;
+    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.2s;
+  }
+  .download-btn:hover { background: var(--teal); color: var(--white); }
+  .on-request { font-family: 'Arial', sans-serif; font-size: 0.8rem; color: var(--gray); font-style: italic; margin-top: 0.75rem; }
+  .in-progress { display: inline-block; background: #fef3c7; color: #92400e; font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; margin-bottom: 0.75rem; }
+  .no-share { font-family: 'Arial', sans-serif; font-size: 0.8rem; color: var(--gray); font-style: italic; margin-top: 0.5rem; }
+  .group-label { font-family: 'Arial', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); margin: 2rem 0 1rem; font-weight: bold; }
+
+  /* SKILLS */
+  #skills { background: var(--navy); }
+  #skills .section-title { color: var(--white); }
+  #skills .section-label { color: var(--teal-light); }
+  #skills .divider { background: var(--teal-light); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .skill-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .skill-icon { width: 2rem; height: 2rem; background: rgba(201,168,76,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 0.25rem; }
+  .skill-icon svg { width: 1rem; height: 1rem; stroke: #e2c97e; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .skill-group h4 { font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #e2c97e; margin-bottom: 0.25rem; }
+  .skill-group p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.8; font-family: 'Arial', sans-serif; }
+
+  /* CONTACT */
+  #contact { background: var(--cream); text-align: center; }
+  #contact .section-title { margin-bottom: 0.75rem; }
+  #contact p { color: var(--gray); margin-bottom: 2rem; font-size: 1rem; }
+  .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .contact-link { display: inline-block; padding: 0.75rem 2rem; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; }
+  .contact-link.primary { background: var(--navy); color: var(--white); }
+  .contact-link.primary:hover { background: var(--teal); }
+  .contact-link.secondary { border: 1px solid var(--navy); color: var(--navy); }
+  .contact-link.secondary:hover { background: var(--navy); color: var(--white); }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: rgba(255,255,255,0.4); text-align: center; padding: 1.5rem; font-family: 'Arial', sans-serif; font-size: 0.78rem; }
+
+  /* MOBILE */
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    section { padding: 3.5rem 1.25rem; }
+    .project-card { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">Aastha Dave</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <img src="photo.JPG" alt="Aastha Dave" class="hero-photo">
+    <h1 class="hero-title">Aastha Dave</h1>
+    <p class="hero-sub">Pharm.D. &nbsp;|&nbsp; MS Regulatory Affairs Candidate</p>
+    <p class="hero-tagline">Committed to doing work that makes a difference.</p>
+    <div class="hero-icons">
+      <div class="hero-icon-item" onclick="document.getElementById('med-affairs').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        <span>Medical Affairs</span>
+      </div>
+      <div class="hero-icon-item" onclick="document.getElementById('reg-legal').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span>Regulatory</span>
+      </div>
+      <div class="hero-icon-item" onclick="document.getElementById('market-access').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <span>Market Access</span>
+      </div>
+    </div>
+    <a href="#about" class="hero-cta">Learn More ↓</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="divider"></div>
+    <div class="about-text">
+      <p>I came to regulatory affairs the scenic route — Pharm.D. first, then consulting, then a medical affairs co-op at a global medtech company, and now finishing my MS in Regulatory Affairs at Northeastern.</p>
+      <p>Along the way I realized I wanted to contribute to patient care at a different scale: not one patient at a time, but through the work that determines whether a product reaches patients at all.</p>
+      <p>That clarity led me to consulting, where I spent nearly two years supporting pharma clients across multiple therapeutic areas. Consulting taught me how to be self-directed and client-facing while staying tightly connected to the broader team.</p>
+      <p>At Insulet Corporation, embedded in Medical Affairs for the Omnipod® 5 franchise, I got to work in a space where patients are managing a chronic disease every single day — which made it impossible to treat the work as abstract. The co-op gave me exposure across medical, regulatory, and market access functions.</p>
+      <p>Now, through my MS program, I've been building the formal regulatory foundation to sit underneath all of that experience — device submissions, quality systems, global regulatory strategy — and for my capstone I'll be taking on a market access project, which feels like the natural next piece of the puzzle.</p>
+      <p class="about-closer">Medical affairs. Regulatory. Market access. Turns out, being unable to pick a lane is actually a career strategy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Selected Work</h2>
+    <div class="divider"></div>
+
+    <!-- 01 Medical Affairs -->
+    <div class="portfolio-section" id="med-affairs">
+      <div class="portfolio-section-title">01 — Medical Affairs</div>
+
+      <div class="project-card">
+        <h3>Medical Communications Consulting</h3>
+        <div class="project-tags">Pharma | Med Comms | Multiple Therapeutic Areas</div>
+        <p>Nearly two years supporting pharma clients across multiple therapeutic areas — developing and maintaining Standard Response Letters, scientific response letters, and custom medical information materials. Contributed to CME and non-CME scientific dissemination, KOL identification, speaker engagement programs, advisory board activities, and evidence gap analyses. Led end-to-end production of a scientific conference video as project lead, managing vendor deliverables, timelines, and budget from initiation through delivery.</p>
+        <p class="no-share">Proprietary materials not shared.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Graduate Co-op — Medical Affairs, Insulet Corporation</h3>
+        <div class="project-tags">Medical Affairs | Insulet Corporation | Global</div>
+        <p>Embedded within the Medical Information and Medical Communications team at Insulet Corporation. Day-to-day responsibilities included:</p>
+        <ul>
+          <li>Authoring and contributing to 20+ FDA SIUU-compliant Scientific Response Letters (SRLs) and custom response documents</li>
+          <li>Maintaining and updating Standard Response Letters (SRLs) across global markets</li>
+          <li>Built and maintained a competitive intelligence tracker spanning clinical data and study methodologies across competitor products — giving the Medical Affairs team a live reference point for scientific positioning and response strategy</li>
+          <li>Supporting scientific congress execution across 3 major international and multiple regional meetings</li>
+          <li>Managing MLR reviews via Veeva, coordinating cross-functional review timelines</li>
+          <li>Responding to internal evidence requests from cross-functional teams</li>
+        </ul>
+        <p class="no-share">Proprietary materials not shared.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Co-op Project — Global Off-Label Inquiry Regulatory Matrix</h3>
+        <div class="project-tags">Regulatory Intelligence | Global | Cross-functional</div>
+        <p>Mapped off-label inquiry response regulations across U.S., Canada, Australia, EU, APAC, GCC, and LATAM into a single reference matrix. Presented findings to stakeholders across Regulatory Affairs, Medical Affairs, Market Access, and Compliance — a cross-functional discussion that led to the formalization of a global SOP and updates to internal SRL templates to reflect current guidance.</p>
+        <p class="no-share">Proprietary materials not shared.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Self-Initiated — AI-Assisted Insights Report</h3>
+        <div class="project-tags">Medical Affairs | AI | Process Innovation</div>
+        <p>Independently piloted an AI-assisted weekly insights report to automate monitoring and synthesis across multiple data sources — designed to surface relevant updates without requiring manual review of each source.</p>
+        <p class="no-share">Proprietary materials not shared.</p>
+      </div>
+    </div>
+
+    <!-- 02 Regulatory & Legal -->
+    <div class="portfolio-section" id="reg-legal">
+      <div class="portfolio-section-title">02 — Regulatory &amp; Legal Writing</div>
+
+      <div class="group-label">Submissions &amp; Strategy</div>
+
+      <div class="project-card">
+        <h3>510(k) Premarket Notification: Substantial Equivalence Submission</h3>
+        <div class="project-tags">510(k) | Medical Device | Predicate Strategy | Graduate Coursework</div>
+        <p>A complete 510(k) Summary for the VascuCage™ Inferior Vena Cava Filter, submitted in accordance with 21 CFR 807.92. Establishes substantial equivalence to the Crux® Vena Cava Filter (K150262) through a structured comparison of intended use, technological characteristics, and design differences. Demonstrates working knowledge of 510(k) format requirements, predicate identification, and substantial equivalence argumentation.</p>
+        <a href="vascucage-510k.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>PMA Regulatory Strategy &amp; Global Classification Plan</h3>
+        <div class="project-tags">PMA | Global Classification | FDA / EU MDR / Health Canada | Graduate Coursework</div>
+        <p>A regulatory strategy document for the VascuCage™ IVC Filter, determining the appropriate U.S. PMA pathway based on device classification, risk profile, and known limitations of the 510(k) pathway for this device type. Includes proposed indications for use, marketing claims, competitive device landscape, and parallel classification analysis across the U.S. (Class III), EU (Class III under EU MDR), and Canada (Class IV under CMDR).</p>
+        <a href="vascucage-pma-strategy.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Pre-Submission (Q-Sub) Package — StrokeMate™ AI-Enabled CT Imaging System</h3>
+        <div class="project-tags">Q-Sub | AI/SaMD | 510(k) | Cybersecurity | Graduate Coursework</div>
+        <p>A formal FDA Pre-Submission request for StrokeMate™, an AI-enabled CT imaging system for acute neurovascular event detection. Seeks FDA feedback on four substantive areas prior to 510(k) submission: predicate strategy and substantial equivalence framing for a device with integrated AI severity scoring; retrospective dataset validation and ground truth adjudication methodology; AI performance drift and locked algorithm controls; and cybersecurity risk modeling for adversarial inputs and DICOM integrity threats.</p>
+        <a href="strokemate-qsub.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Multi-Jurisdictional PMA Strategy: U.S., Canada &amp; Mexico</h3>
+        <div class="project-tags">PMA | Global Strategy | Combination Product | IDE | Graduate Coursework</div>
+        <p>A comprehensive global regulatory strategy for the nuBeam BNCT System — an accelerator-based combination product for Boron Neutron Capture Therapy. Anchored in a U.S. modular PMA with parallel Class IV MDL submission to Health Canada and Class III Registro Sanitario to COFEPRIS. Covers harmonized testing frameworks (IEC 60601, IEC 62304, ISO 14971, ISO 13485), IDE clinical strategy, MAH responsibilities across all three jurisdictions, labeling and UDI requirements, and post-market surveillance obligations.</p>
+        <a href="nubeam-global-strategy.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="group-label">Quality Systems &amp; Device Development</div>
+
+      <div class="project-card">
+        <h3>Design Control &amp; Development Plan — StrokeMate™</h3>
+        <div class="project-tags">21 CFR 820.30 | Design Controls | DHF | Graduate Coursework</div>
+        <p>A 21 CFR 820.30-aligned design and development plan covering the full device lifecycle from user needs through design transfer. Includes cross-functional RACI mapping, design input/output documentation, verification and validation strategy, risk management integration per ISO 14971, and Design History File (DHF) structure.</p>
+        <a href="strokemate-design-control.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>QMS SOP Suite — Document Control | CAPA | Complaint Handling &amp; MDR</h3>
+        <div class="project-tags">21 CFR 820 | ISO 13485 | CAPA | MDR | Graduate Coursework</div>
+        <p>Three production-format SOPs for RadHealth, Inc., aligned with 21 CFR Part 820 and ISO 13485:2016. Each SOP includes purpose, scope, definitions, responsibility/authority matrix, step-by-step procedures, and revision history. The CAPA and Complaint Handling SOPs specifically address AI output anomalies, cybersecurity events, and MDR reportability determinations.</p>
+        <a href="strokemate-sop-suite.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>BioDevek — 21 CFR 820 / ISO 13485 Gap Analysis &amp; ISO 14971 Risk Management Plan</h3>
+        <div class="project-tags">Academic-Industry Collaboration | Gap Analysis | Risk Management</div>
+        <p>Gap analysis and ISO 14971-aligned risk management plan for an early-stage medical device startup, supporting regulatory compliance positioning and post-market surveillance readiness.</p>
+        <p class="on-request">Available upon request.</p>
+      </div>
+
+      <div class="group-label">Safety &amp; Legal</div>
+
+      <div class="project-card">
+        <h3>Post-Market Benefit-Risk Analysis: SUSVIMO® Combination Product Recall</h3>
+        <div class="project-tags">Benefit-Risk | Post-Market Surveillance | Combination Product | REMS | Graduate Coursework</div>
+        <p>A comprehensive analysis of SUSVIMO®'s regulatory journey from BLA approval to voluntary recall — examining how FDA's Benefit-Risk Framework applies to combination products, where pre-market safety assessments fell short, and what the case reveals about post-market surveillance gaps for biologic-device products. Covers FAERS signal detection, REMS considerations, the role of human factors, and strategic recommendations for combination product oversight.</p>
+        <a href="susvimo-benefit-risk.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Harmonising Innovation: Reconciling the EU AI Act and MDR</h3>
+        <div class="project-tags">Legal & Policy Analysis | EU Digital Health | International RA | Graduate Coursework</div>
+        <p>Most regulatory writing is about applying frameworks. This paper is about interrogating them. Examines what happens when two equally binding EU Regulations — the MDR and the AI Act — overlap without a clear hierarchy, and what that means for manufacturers of AI-enabled medical devices. Argues through three CJEU cases that definitional ambiguity, inconsistent Notified Body enforcement, and disproportionate compliance burdens risk stifling the very innovation both Regulations are designed to enable.</p>
+        <a href="eu-ai-act-paper.pdf" target="_blank" class="download-btn">View PDF</a>
+      </div>
+
+    </div>
+
+    <!-- 03 Market Access -->
+    <div class="portfolio-section" id="market-access">
+      <div class="portfolio-section-title">03 — Market Access</div>
+
+      <div class="project-card">
+        <span class="in-progress">In Progress — June 2026</span>
+        <h3>Capstone: Market Access Strategy — Gene Therapy Agent</h3>
+        <div class="project-tags">Market Access | HEOR | Payer Evidence | Value Demonstration</div>
+        <p>My capstone project applies market access and health economics frameworks to develop a payer-facing value strategy for a gene therapy agent — one of the most complex reimbursement challenges in the current landscape given the one-time, high-cost nature of these treatments. This section will be updated upon completion.</p>
+        <p class="on-request">Check back June 2026.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Payer Evidence &amp; Market Access Support — Insulet Corporation</h3>
+        <div class="project-tags">Market Access | CMS Medicaid | Value Narratives | Payer Relations</div>
+        <p>During my co-op, I partnered with the Market Access and Payer Relations teams to support CMS Medicaid coverage discussions for the Omnipod® 5 franchise. This included developing evidence mapping frameworks that translated clinical data into payer-relevant value narratives — connecting the clinical evidence base to the language and criteria that actually drive coverage decisions.</p>
+        <p class="no-share">Proprietary materials not shared.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="divider"></div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <h4>Regulatory</h4>
+        <p>510(k) · PMA · Q-Sub · SaMD · Global Classification · FDA · EU MDR · Health Canada · COFEPRIS</p>
+      </div>
+      <div class="skill-group">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+        <h4>Quality Systems</h4>
+        <p>21 CFR 820 · ISO 13485 · ISO 14971 · CAPA · Complaint Handling · MDR Reporting</p>
+      </div>
+      <div class="skill-group">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+        <h4>Medical Affairs</h4>
+        <p>Scientific Response Letters · SRL Lifecycle · MLR Reviews · Congress Support · Competitive Intelligence</p>
+      </div>
+      <div class="skill-group">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+        <h4>Market Access</h4>
+        <p>Payer Evidence Mapping · CMS/Medicaid · Value Narrative Development · HEOR</p>
+      </div>
+      <div class="skill-group">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+        <h4>Safety Sciences</h4>
+        <p>SUSAR Reporting · Pharmacovigilance · Benefit-Risk Assessment · REMS · FAERS · ICH E2A</p>
+      </div>
+      <div class="skill-group">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <h4>Tools</h4>
+        <p>Veeva · Microsoft Office Suite · SharePoint · Google Workspace</p>
+      </div>
+      <div class="skill-group">
+        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div>
+        <h4>Languages</h4>
+        <p>English · Hindi · Gujarati</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="divider" style="margin: 0 auto 1.5rem;"></div>
+    <p>Open to full-time opportunities in regulatory affairs, medical affairs, and market access.</p>
+    <div class="contact-links">
+      <a href="https://linkedin.com/in/aastha-dave-85547823a" target="_blank" class="contact-link primary">LinkedIn</a>
+      <a href="mailto:dave.aas@northeastern.edu" class="contact-link secondary">Email Me</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Aastha Dave · Built with purpose, not a template.</p>
+</footer>
+
+</body>
+</html>
