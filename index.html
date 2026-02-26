@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C02ST4Z19Y"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-C02ST4Z19Y');
 </script>
-</head>
- <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aastha Dave — Regulatory Affairs & Market Access</title>
 <style>
@@ -47,7 +44,6 @@
     text-align: center; padding: 6rem 2rem 4rem;
     position: relative; overflow: hidden;
   }
-  #hero::before { content: ''; position: absolute; inset: 0; background: none; }
   .hero-content { position: relative; z-index: 1; max-width: 800px; }
   .hero-photo {
     width: 140px; height: 140px; border-radius: 50%;
@@ -73,7 +69,7 @@
 
   /* SECTIONS */
   section { padding: 5rem 2rem; }
-  .container { max-width: 860px; margin: 0 auto; }
+  .container { max-width: 960px; margin: 0 auto; }
   .section-label { font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
   .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); margin-bottom: 2rem; font-weight: normal; }
   .divider { width: 3rem; height: 2px; background: var(--teal); margin-bottom: 2.5rem; }
@@ -87,10 +83,158 @@
   #portfolio { background: var(--white); }
   .portfolio-section { margin-bottom: 4rem; }
   .portfolio-section-title {
-    font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
-    color: var(--teal); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;
+    font-family: 'Arial', sans-serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--navy); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;
+    font-weight: bold; border-left: 3px solid var(--teal); padding-left: 0.75rem;
   }
   .portfolio-section-title::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
+
+  /* ── DUAL PANEL LAYOUT ── */
+  .dual-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+    align-items: start;
+  }
+
+  .panel {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 620px;
+  }
+
+  .panel:first-child {
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .panel-body {
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  /* Custom scrollbar to match brand */
+  .panel-body::-webkit-scrollbar { width: 5px; }
+  .panel-body::-webkit-scrollbar-track { background: #f9f9f9; }
+  .panel-body::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+  .panel-body::-webkit-scrollbar-thumb:hover { background: var(--navy); }
+
+  .panel-header {
+    padding: 1rem 1.5rem 0.9rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--navy);
+  }
+
+  .panel-header-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+  }
+  .panel-header-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--teal-light);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .panel-header-text {}
+  .panel-header-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(226,201,126,0.7);
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+  .panel-header-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+  }
+
+  .panel-body {
+    padding: 1.25rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Panel project cards — more compact than full cards */
+  .panel-card {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1rem;
+  }
+  .panel-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .panel-card h3 {
+    color: var(--navy);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.35;
+  }
+  .panel-card .project-tags {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.65rem;
+    color: var(--teal);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .panel-card p {
+    color: var(--gray);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.55;
+  }
+  .panel-card ul {
+    padding-left: 1.1rem;
+    color: var(--gray);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  .panel-card ul li { margin-bottom: 0.25rem; }
+
+  .panel-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+
+  .panel-divider-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 700;
+    margin: 0.5rem 0 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .panel-divider-label:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  /* standard project card (kept for non-regulatory sections) */
   .project-card { border: 1px solid #e5e7eb; padding: 2rem; margin-bottom: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
   .project-card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(201,168,76,0.08); }
   .project-card h3 { color: var(--navy); font-size: 1.1rem; margin-bottom: 0.4rem; }
@@ -99,13 +243,24 @@
   .project-card ul { padding-left: 1.25rem; color: var(--gray); font-size: 0.95rem; }
   .project-card ul li { margin-bottom: 0.4rem; }
   .project-card h4 { color: var(--navy); font-size: 0.95rem; margin: 1.25rem 0 0.5rem; font-style: italic; }
+
   .download-btn {
-    display: inline-block; margin-top: 1rem; margin-right: 0.75rem;
-    padding: 0.5rem 1.25rem; border: 1px solid var(--teal); color: var(--teal);
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--teal); color: var(--teal);
     text-decoration: none; font-family: 'Arial', sans-serif;
-    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.2s;
+    font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; transition: all 0.2s;
   }
   .download-btn:hover { background: var(--teal); color: var(--white); }
+
+  /* full-size download btn for non-panel cards */
+  .project-card .download-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.78rem;
+    margin-top: 1rem;
+    margin-right: 0.75rem;
+  }
+
   .on-request { font-family: 'Arial', sans-serif; font-size: 0.8rem; color: var(--gray); font-style: italic; margin-top: 0.75rem; }
   .in-progress { display: inline-block; background: #fef3c7; color: #92400e; font-family: 'Arial', sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; margin-bottom: 0.75rem; }
   .no-share { font-family: 'Arial', sans-serif; font-size: 0.8rem; color: var(--gray); font-style: italic; margin-top: 0.5rem; }
@@ -138,10 +293,12 @@
   footer { background: var(--navy); color: rgba(255,255,255,0.4); text-align: center; padding: 1.5rem; font-family: 'Arial', sans-serif; font-size: 0.78rem; }
 
   /* MOBILE */
-  @media (max-width: 640px) {
+  @media (max-width: 720px) {
     .nav-links { display: none; }
     section { padding: 3.5rem 1.25rem; }
     .project-card { padding: 1.25rem; }
+    .dual-panel { grid-template-columns: 1fr; }
+    .panel:first-child { border-right: none; border-bottom: 1px solid #e5e7eb; }
   }
 </style>
 </head>
@@ -161,7 +318,9 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-content">
-    <img src="photo.JPG" alt="Aastha Dave" class="hero-photo">
+    <div class="hero-photo" style="background:rgba(226,201,126,0.15);display:flex;align-items:center;justify-content:center;">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#e2c97e" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </div>
     <h1 class="hero-title">Aastha Dave</h1>
     <p class="hero-sub">Pharm.D. &nbsp;|&nbsp; MS Regulatory Affairs Candidate</p>
     <p class="hero-tagline">Committed to doing work that makes a difference.</p>
@@ -225,7 +384,7 @@
         <ul>
           <li>Authoring and contributing to 20+ FDA SIUU-compliant Scientific Response Letters (SRLs) and custom response documents</li>
           <li>Maintaining and updating Standard Response Letters (SRLs) across global markets</li>
-          <li>Built and maintained a competitive intelligence tracker spanning clinical data and study methodologies across competitor products — giving the Medical Affairs team a live reference point for scientific positioning and response strategy</li>
+          <li>Built and maintained a competitive intelligence tracker spanning clinical data and study methodologies across competitor products</li>
           <li>Supporting scientific congress execution across 3 major international and multiple regional meetings</li>
           <li>Managing MLR reviews via Veeva, coordinating cross-functional review timelines</li>
           <li>Responding to internal evidence requests from cross-functional teams</li>
@@ -236,7 +395,7 @@
       <div class="project-card">
         <h3>Co-op Project — Global Off-Label Inquiry Regulatory Matrix</h3>
         <div class="project-tags">Regulatory Intelligence | Global | Cross-functional</div>
-        <p>Mapped off-label inquiry response regulations across U.S., Canada, Australia, EU, APAC, GCC, and LATAM into a single reference matrix. Presented findings to stakeholders across Regulatory Affairs, Medical Affairs, Market Access, and Compliance — a cross-functional discussion that led to the formalization of a global SOP and updates to internal SRL templates to reflect current guidance.</p>
+        <p>Mapped off-label inquiry response regulations across U.S., Canada, Australia, EU, APAC, GCC, and LATAM into a single reference matrix. Presented findings to stakeholders across Regulatory Affairs, Medical Affairs, Market Access, and Compliance — a cross-functional discussion that led to the formalization of a global SOP and updates to internal SRL templates.</p>
         <p class="no-share">Proprietary materials not shared.</p>
       </div>
 
@@ -248,80 +407,172 @@
       </div>
     </div>
 
-    <!-- 02 Regulatory & Legal -->
+    <!-- 02 Regulatory & Legal — DUAL PANEL -->
     <div class="portfolio-section" id="reg-legal">
       <div class="portfolio-section-title">02 — Regulatory &amp; Legal Writing</div>
 
-      <div class="group-label">Submissions &amp; Strategy</div>
+      <!-- ══ DUAL PANEL ══ -->
+      <div class="dual-panel">
 
-      <div class="project-card">
-        <h3>510(k) Premarket Notification: Substantial Equivalence Submission</h3>
-        <div class="project-tags">510(k) | Medical Device | Predicate Strategy | Graduate Coursework</div>
-        <p>A complete 510(k) Summary for the VascuCage™ Inferior Vena Cava Filter, submitted in accordance with 21 CFR 807.92. Establishes substantial equivalence to the Crux® Vena Cava Filter (K150262) through a structured comparison of intended use, technological characteristics, and design differences. Demonstrates working knowledge of 510(k) format requirements, predicate identification, and substantial equivalence argumentation.</p>
-        <a href="vascucage-510k.pdf" target="_blank" class="download-btn">View PDF</a>
-      </div>
+        <!-- LEFT: Biopharmaceuticals -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-icon">
+              <svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            </div>
+            <div class="panel-header-text">
+              <div class="panel-header-label">Submissions &amp; Strategy</div>
+              <div class="panel-header-title">Biopharmaceuticals</div>
+            </div>
+          </div>
 
-      <div class="project-card">
-        <h3>PMA Regulatory Strategy &amp; Global Classification Plan</h3>
-        <div class="project-tags">PMA | Global Classification | FDA / EU MDR / Health Canada | Graduate Coursework</div>
-        <p>A regulatory strategy document for the VascuCage™ IVC Filter, determining the appropriate U.S. PMA pathway based on device classification, risk profile, and known limitations of the 510(k) pathway for this device type. Includes proposed indications for use, marketing claims, competitive device landscape, and parallel classification analysis across the U.S. (Class III), EU (Class III under EU MDR), and Canada (Class IV under CMDR).</p>
-        <a href="vascucage-pma-strategy.pdf" target="_blank" class="download-btn">View PDF</a>
-      </div>
+          <div class="panel-body">
 
-      <div class="project-card">
-        <h3>Pre-Submission (Q-Sub) Package — StrokeMate™ AI-Enabled CT Imaging System</h3>
-        <div class="project-tags">Q-Sub | AI/SaMD | 510(k) | Cybersecurity | Graduate Coursework</div>
-        <p>A formal FDA Pre-Submission request for StrokeMate™, an AI-enabled CT imaging system for acute neurovascular event detection. Seeks FDA feedback on four substantive areas prior to 510(k) submission: predicate strategy and substantial equivalence framing for a device with integrated AI severity scoring; retrospective dataset validation and ground truth adjudication methodology; AI performance drift and locked algorithm controls; and cybersecurity risk modeling for adversarial inputs and DICOM integrity threats.</p>
-        <a href="strokemate-qsub.pdf" target="_blank" class="download-btn">View PDF</a>
-      </div>
+            <div class="panel-divider-label">Pre-IND Package — Cromaglutide (OBEGO™)</div>
 
-      <div class="project-card">
-        <h3>Multi-Jurisdictional PMA Strategy: U.S., Canada &amp; Mexico</h3>
-        <div class="project-tags">PMA | Global Strategy | Combination Product | IDE | Graduate Coursework</div>
-        <p>A comprehensive global regulatory strategy for the nuBeam BNCT System — an accelerator-based combination product for Boron Neutron Capture Therapy. Anchored in a U.S. modular PMA with parallel Class IV MDL submission to Health Canada and Class III Registro Sanitario to COFEPRIS. Covers harmonized testing frameworks (IEC 60601, IEC 62304, ISO 14971, ISO 13485), IDE clinical strategy, MAH responsibilities across all three jurisdictions, labeling and UDI requirements, and post-market surveillance obligations.</p>
-        <a href="nubeam-global-strategy.pdf" target="_blank" class="download-btn">View PDF</a>
-      </div>
+            <div class="panel-card">
+              <h3>Pre-IND Meeting Package</h3>
+              <div class="project-tags">Type B Meeting | 21 CFR Part 312 | RA-Authored</div>
+              <p>A single combined package containing all three RA-authored Pre-IND deliverables for cromaglutide (OBEGO™):</p>
+              <ul>
+                <li><strong>Meeting Request Letter</strong> — Formal Type B meeting request to DMEP/CDER with drug overview, rationale for FIH entry, proposed logistics, and a structured preview of five substantive questions spanning nonclinical adequacy, thyroid C-cell findings, Phase 1 design, CMC controls, and Fast Track eligibility.</li>
+                <li><strong>Briefing Document</strong> — Substantive package submitted 30 days prior to meeting. Includes executive summary, pharmacology and MoA overview, nonclinical data summary table, Phase 1 SAD/MAD design synopsis with MRSD calculation, IND-stage CMC control strategy, and five detailed questions with Sponsor positions.</li>
+                <li><strong>Meeting Minutes</strong> — RA-drafted meeting record including attendee log, FDA written responses to all five questions, discussion summaries, and a consolidated action item tracker with owners and due dates. Submitted to FDA within 30 days post-meeting and finalized following FDA review.</li>
+              </ul>
+              <div class="panel-btn-row">
+                <a href="obego-preind-materials.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
 
-      <div class="group-label">Quality Systems &amp; Device Development</div>
+            <div class="panel-divider-label">IND — Cromaglutide (OBEGO™)</div>
 
-      <div class="project-card">
-        <h3>Design Control &amp; Development Plan — StrokeMate™</h3>
-        <div class="project-tags">21 CFR 820.30 | Design Controls | DHF | Graduate Coursework</div>
-        <p>A 21 CFR 820.30-aligned design and development plan covering the full device lifecycle from user needs through design transfer. Includes cross-functional RACI mapping, design input/output documentation, verification and validation strategy, risk management integration per ISO 14971, and Design History File (DHF) structure.</p>
-        <a href="strokemate-design-control.pdf" target="_blank" class="download-btn">View PDF</a>
-      </div>
+            <div class="panel-card">
+              <h3>Investigational New Drug (IND) Application</h3>
+              <div class="project-tags">21 CFR Part 312 | eCTD | Phase 1 FIH | RA-Authored Sections</div>
+              <p>Full IND package for cromaglutide (OBS-2020), a GLP-1 receptor agonist for chronic weight management. RA-authored sections include FDA Form 1571, Cover Letter, Introductory Statement, General Investigational Plan, Administrative Information, CMC Summary, FDA Forms 1572 and 3674, and Categorical Exclusion. Submitted in eCTD format per FDA Guidance Revision 8 (September 2024).</p>
+              <div class="panel-btn-row">
+                <a href="obego-ind.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
 
-      <div class="project-card">
-        <h3>QMS SOP Suite — Document Control | CAPA | Complaint Handling &amp; MDR</h3>
-        <div class="project-tags">21 CFR 820 | ISO 13485 | CAPA | MDR | Graduate Coursework</div>
-        <p>Three production-format SOPs for RadHealth, Inc., aligned with 21 CFR Part 820 and ISO 13485:2016. Each SOP includes purpose, scope, definitions, responsibility/authority matrix, step-by-step procedures, and revision history. The CAPA and Complaint Handling SOPs specifically address AI output anomalies, cybersecurity events, and MDR reportability determinations.</p>
-        <a href="strokemate-sop-suite.pdf" target="_blank" class="download-btn">View PDF</a>
-      </div>
+            <div class="panel-divider-label">NDA — Cromaglutide (OBEGO™)</div>
 
-      <div class="project-card">
-        <h3>BioDevek — 21 CFR 820 / ISO 13485 Gap Analysis &amp; ISO 14971 Risk Management Plan</h3>
-        <div class="project-tags">Academic-Industry Collaboration | Gap Analysis | Risk Management</div>
-        <p>Gap analysis and ISO 14971-aligned risk management plan for an early-stage medical device startup, supporting regulatory compliance positioning and post-market surveillance readiness.</p>
-        <p class="on-request">Available upon request.</p>
-      </div>
+            <div class="panel-card">
+              <h3>New Drug Application (NDA)</h3>
+              <div class="project-tags">505(b)(1) | ICH M4 CTD | eCTD | RA-Authored Sections</div>
+              <p>505(b)(1) NDA for cromaglutide, supported by the CERES Phase 3 clinical programme. RA-authored sections span all of Module 1 (FDA 356h, Cover Letter, full PLR-format draft package insert, patent certifications, iPSP, categorical exclusion), Module 2 summaries (Clinical Overview, Clinical Summary with pivotal efficacy and integrated safety tables), and Module 3 CMC. Non-RA modules summarised with cross-functional attribution.</p>
+              <div class="panel-btn-row">
+                <a href="obego-nda.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
 
-      <div class="group-label">Safety &amp; Legal</div>
+          </div><!-- end panel-body -->
+        </div><!-- end left panel -->
 
-      <div class="project-card">
-        <h3>Post-Market Benefit-Risk Analysis: SUSVIMO® Combination Product Recall</h3>
-        <div class="project-tags">Benefit-Risk | Post-Market Surveillance | Combination Product | REMS | Graduate Coursework</div>
-        <p>A comprehensive analysis of SUSVIMO®'s regulatory journey from BLA approval to voluntary recall — examining how FDA's Benefit-Risk Framework applies to combination products, where pre-market safety assessments fell short, and what the case reveals about post-market surveillance gaps for biologic-device products. Covers FAERS signal detection, REMS considerations, the role of human factors, and strategic recommendations for combination product oversight.</p>
-        <a href="susvimo-benefit-risk.pdf" target="_blank" class="download-btn">View PDF</a>
-      </div>
+        <!-- RIGHT: Medical Devices -->
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+            </div>
+            <div class="panel-header-text">
+              <div class="panel-header-label">Submissions &amp; Strategy</div>
+              <div class="panel-header-title">Medical Devices</div>
+            </div>
+          </div>
 
-      <div class="project-card">
-        <h3>Harmonising Innovation: Reconciling the EU AI Act and MDR</h3>
-        <div class="project-tags">Legal & Policy Analysis | EU Digital Health | International RA | Graduate Coursework</div>
-        <p>Most regulatory writing is about applying frameworks. This paper is about interrogating them. Examines what happens when two equally binding EU Regulations — the MDR and the AI Act — overlap without a clear hierarchy, and what that means for manufacturers of AI-enabled medical devices. Argues through three CJEU cases that definitional ambiguity, inconsistent Notified Body enforcement, and disproportionate compliance burdens risk stifling the very innovation both Regulations are designed to enable.</p>
-        <a href="eu-ai-act-paper.pdf" target="_blank" class="download-btn">View PDF</a>
-      </div>
+          <div class="panel-body">
 
-    </div>
+            <div class="panel-divider-label">Submissions</div>
+
+            <div class="panel-card">
+              <h3>510(k) Premarket Notification — VascuCage™ IVC Filter</h3>
+              <div class="project-tags">510(k) | 21 CFR 807.92 | Predicate Strategy | Graduate Coursework</div>
+              <p>Complete 510(k) Summary establishing substantial equivalence of the VascuCage™ Inferior Vena Cava Filter to the Crux® Vena Cava Filter (K150262). Structured comparison of intended use, technological characteristics, and design differences per 21 CFR 807.92.</p>
+              <div class="panel-btn-row">
+                <a href="vascucage-510k.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <h3>PMA Regulatory Strategy &amp; Global Classification — VascuCage™</h3>
+              <div class="project-tags">PMA | FDA / EU MDR / Health Canada | Global Classification | Graduate Coursework</div>
+              <p>Regulatory strategy document determining the appropriate U.S. PMA pathway, with parallel classification analysis across the U.S. (Class III), EU (Class III under EU MDR), and Canada (Class IV under CMDR). Includes proposed indications for use, marketing claims, and competitive device landscape.</p>
+              <div class="panel-btn-row">
+                <a href="vascucage-pma-strategy.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <h3>Pre-Submission (Q-Sub) Package — StrokeMate™ AI-Enabled CT Imaging System</h3>
+              <div class="project-tags">Q-Sub | AI/SaMD | 510(k) | Cybersecurity | Graduate Coursework</div>
+              <p>Formal FDA Pre-Submission request for an AI-enabled CT imaging system for acute neurovascular event detection. Seeks FDA feedback on predicate strategy for AI-integrated devices, retrospective dataset validation, algorithm drift controls, and cybersecurity risk modeling for adversarial inputs and DICOM integrity threats.</p>
+              <div class="panel-btn-row">
+                <a href="strokemate-qsub.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <h3>Multi-Jurisdictional PMA Strategy — nuBeam BNCT System</h3>
+              <div class="project-tags">PMA | U.S. / Canada / Mexico | Combination Product | IDE | Graduate Coursework</div>
+              <p>Global regulatory strategy for an accelerator-based combination product for Boron Neutron Capture Therapy. Modular PMA anchored in the U.S., with parallel Class IV MDL submission to Health Canada and Class III Registro Sanitario to COFEPRIS. Covers harmonized testing (IEC 60601, IEC 62304, ISO 14971, ISO 13485), IDE strategy, and post-market obligations across all three markets.</p>
+              <div class="panel-btn-row">
+                <a href="nubeam-global-strategy.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
+
+            <div class="panel-divider-label">Quality Systems &amp; Device Development</div>
+
+            <div class="panel-card">
+              <h3>Design Control &amp; Development Plan — StrokeMate™</h3>
+              <div class="project-tags">21 CFR 820.30 | Design Controls | DHF | Graduate Coursework</div>
+              <p>21 CFR 820.30-aligned design and development plan covering the full device lifecycle from user needs through design transfer. Includes RACI mapping, design input/output documentation, V&amp;V strategy, ISO 14971 risk management integration, and DHF structure.</p>
+              <div class="panel-btn-row">
+                <a href="strokemate-design-control.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <h3>QMS SOP Suite — Document Control | CAPA | Complaint Handling &amp; MDR</h3>
+              <div class="project-tags">21 CFR 820 | ISO 13485 | CAPA | MDR Reporting | Graduate Coursework</div>
+              <p>Three production-format SOPs for RadHealth, Inc., aligned with 21 CFR Part 820 and ISO 13485:2016, each with purpose, scope, definitions, RACI matrix, step-by-step procedures, and revision history. The CAPA and Complaint Handling SOPs specifically address AI output anomalies, cybersecurity events, and MDR reportability determinations.</p>
+              <div class="panel-btn-row">
+                <a href="strokemate-sop-suite.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <h3>BioDevek — Gap Analysis &amp; ISO 14971 Risk Management Plan</h3>
+              <div class="project-tags">Academic-Industry Collaboration | 21 CFR 820 / ISO 13485 | Risk Management</div>
+              <p>Gap analysis and ISO 14971-aligned risk management plan for an early-stage medical device startup, supporting regulatory compliance positioning and post-market surveillance readiness.</p>
+              <p style="font-family:'Arial',sans-serif;font-size:0.8rem;color:var(--gray);font-style:italic;margin-top:0.4rem;">Available upon request.</p>
+            </div>
+
+            <div class="panel-divider-label">Safety &amp; Legal</div>
+
+            <div class="panel-card">
+              <h3>Post-Market Benefit-Risk Analysis — SUSVIMO® Recall</h3>
+              <div class="project-tags">Benefit-Risk | Post-Market Surveillance | Combination Product | REMS | Graduate Coursework</div>
+              <p>Comprehensive analysis of SUSVIMO®'s regulatory journey from BLA approval to voluntary recall — examining FDA's Benefit-Risk Framework for combination products, FAERS signal detection, REMS considerations, human factors gaps, and strategic recommendations for combination product oversight.</p>
+              <div class="panel-btn-row">
+                <a href="susvimo-benefit-risk.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
+
+            <div class="panel-card">
+              <h3>Harmonising Innovation: Reconciling the EU AI Act and MDR</h3>
+              <div class="project-tags">Legal &amp; Policy Analysis | EU Digital Health | International RA | Graduate Coursework</div>
+              <p>Examines what happens when the EU MDR and AI Act overlap without a clear hierarchy, argued through three CJEU cases. Addresses definitional ambiguity, inconsistent Notified Body enforcement, and disproportionate compliance burdens for manufacturers of AI-enabled medical devices.</p>
+              <div class="panel-btn-row">
+                <a href="eu-ai-act-paper.pdf" target="_blank" class="download-btn">View PDF</a>
+              </div>
+            </div>
+
+          </div><!-- end panel-body -->
+        </div><!-- end right panel -->
+
+      </div><!-- end dual-panel -->
+    </div><!-- end reg-legal section -->
 
     <!-- 03 Market Access -->
     <div class="portfolio-section" id="market-access">
