@@ -33,7 +33,7 @@ nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(26,46,68,0.97);b
 .hero-photo-texture{position:absolute;inset:0;background:
   repeating-linear-gradient(45deg,rgba(154,122,46,0.04) 0px,rgba(154,122,46,0.04) 1px,transparent 1px,transparent 12px),
   repeating-linear-gradient(-45deg,rgba(154,122,46,0.04) 0px,rgba(154,122,46,0.04) 1px,transparent 1px,transparent 12px)}
-.hero-photo-frame{position:absolute;bottom:0;left:0;right:0;top:72px;display:flex;align-items:flex-end;justify-content:center;padding:0 2rem}
+.hero-photo-frame{position:absolute;bottom:0;left:0;right:0;top:72px;display:flex;align-items:center;justify-content:center;padding:0 2rem}
 .hero-photo-frame img{width:100%;max-width:340px;height:auto;object-fit:cover;object-position:center top;display:block;filter:grayscale(15%)}
 .hero-photo-accent{position:absolute;top:88px;left:1.5rem;width:3px;height:60px;background:var(--gold)}
 .hero-text-panel{display:flex;flex-direction:column;justify-content:center;padding:6rem 3rem 4rem 2.5rem;border-left:1px solid rgba(226,201,126,0.15)}
@@ -70,8 +70,8 @@ section{padding:5rem 2rem}
 .about-closer{font-size:1rem;font-style:italic;color:var(--navy);margin-top:1.5rem;border-left:3px solid var(--gold);padding-left:1.25rem;line-height:1.6}
 
 /* TIMELINE */
-.timeline-wrap{margin-top:2rem;background:var(--navy);padding:2rem;position:relative}
-.timeline-label-top{font-family:Arial,sans-serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(226,201,126,0.5);margin-bottom:1.5rem}
+.timeline-wrap{margin-top:2rem;padding:2rem 0;position:relative}
+.timeline-label-top{font-family:Arial,sans-serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray);margin-bottom:1.5rem}
 .tl{display:flex;position:relative;gap:0}
 .tl::before{content:'';position:absolute;top:8px;left:0;right:0;height:1px;background:rgba(226,201,126,0.2)}
 .tl-item{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;cursor:pointer}
@@ -616,7 +616,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.35);text-align:center;pad
     <div class="section-label">Contact</div>
     <h2 class="section-title">Let's Connect</h2>
     <div class="divider"></div>
-    <p>Open to full-time opportunities in medical affairs, regulatory, or market access.</p>
+    <p>Open to full-time opportunities.</p>
     <div class="contact-links">
       <a href="https://linkedin.com/in/aastha-dave-85547823a" target="_blank" class="contact-link primary">LinkedIn</a>
       <a href="mailto:dave.aas@northeastern.edu" class="contact-link secondary">Email Me</a>
